@@ -52,7 +52,7 @@ if [[ $DISABLE_CONTROL_PANEL != "1" ]]; then
 fi
 
 arch=$(uname -m)
-if [ $arch = "x86_64" ]; then
+if [[ $arch = "x86_64" ]] && [[ $DISABLE_IPDBCF = "True" ]]; then
 	if [ ! -f "/usr/bin/killall" ]; then
 		echo '#!/bin/bash' >/usr/bin/killall && chmod +x /usr/bin/killall
 	fi
